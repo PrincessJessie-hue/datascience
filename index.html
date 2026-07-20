@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIYANDA | Data Analytics Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandRed: '#E63946',
+                        brandPink: '#FF8DA1',
+                        slateDark: '#111215',
+                        creamCanvas: '#F9F6F0',
+                        cardSurface: '#FFFFFF',
+                        borderFine: '#EAE5D9'
+                    },
+                    animation: {
+                        marquee: 'marquee 30s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Editorial Typography Suite -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide System Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F9F6F0;
+            color: #111215;
+        }
+        .font-editorial {
+            font-family: 'Italiana', serif;
+        }
+        .font-serif-body {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .soft-panel {
+            background: #ffffff;
+            border: 1px solid #EAE5D9;
+            box-shadow: 0 10px 30px -10px rgba(17, 18, 21, 0.04);
+        }
+
+        /* Interactive Pink Highlight Cursor */
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #FF8DA1;
+            background-color: rgba(255, 141, 161, 0.15);
+            border-radius: 50%;
+            position: fixed;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+        }
+        
+        /* Interactive scale state when hovering over clickable items */
+        .custom-cursor.hovering {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 141, 161, 0.35);
+            border-color: #FF8DA1;
+        }
+
+        /* Hide the native cursor over interactive layout layers */
+        html, a, button, select, input {
+            cursor: none !important;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brandPink selection:text-white">
+
+    <!-- Interactive Custom Highlight Cursor -->
+    <div class="custom-cursor hidden md:block" id="interactive-cursor"></div>
+
+    <!-- Top Navigation -->
+    <nav class="sticky top-0 z-50 w-full border-b border-borderFine bg-creamCanvas/80 backdrop-blur-md px-8 py-5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl font-editorial font-bold tracking-tight text-slateDark">AYANDA</span>
+                <span class="text-[10px] font-mono tracking-widest text-slateDark/40 uppercase border-l border-borderFine pl-3">Technical Portfolio</span>
+            </div>
+            <div class="flex items-center gap-8 text-xs font-mono uppercase tracking-wider">
+                <a href="#projects" class="hover:text-brandPink transition-colors interactive-target">Case Studies</a>
+                <a href="#about-profile" class="hover:text-brandPink transition-colors interactive-target">Profile Workspace</a>
+                <a href="#data-process" class="hover:text-brandPink transition-colors interactive-target">Analytical Engine</a>
+                <a href="#" class="px-4 py-2 bg-slateDark text-white hover:bg-brandPink transition-all flex items-center gap-2 font-medium shadow-sm rounded-none interactive-target">
+                    <i data-lucide="download" class="w-3.5 h-3.5"></i> Download CV
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Stack -->
+    <main class="space-y-40 pb-40">
+        
+        <!-- ================= HERO PREAMBLE ================= -->
+        <header class="max-w-6xl mx-auto px-8 pt-28 space-y-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-white border border-borderFine text-xs font-mono">
+                <span class="w-2 h-2 bg-brandPink rounded-full animate-ping"></span> Active Systems Registry [2026]
+            </div>
+            <h1 class="text-6xl md:text-8xl font-editorial text-slateDark leading-none tracking-tight max-w-5xl">
+                Deconstructing chaotic datasets into pure, <span class="italic font-serif-body text-brandPink font-light lowercase">visual intelligence</span>.
+            </h1>
+            <p class="text-lg md:text-xl text-slateDark/70 font-light max-w-3xl leading-relaxed font-serif-body">
+                Independent framework systems analyst specializing in data engineering pipelines, interactive dashboard architectures, and translating heavy relational layers into pristine, actionable corporate insights.
+            </p>
+            <div class="pt-4 flex flex-wrap gap-4">
+                <a href="#projects" class="px-6 py-4 bg-slateDark text-white text-xs font-mono uppercase tracking-wider hover:bg-brandPink transition-all interactive-target">
+                    Open Analytical Records
+                </a>
+                <a href="#" class="px-6 py-4 bg-white border border-borderFine text-xs font-mono uppercase tracking-wider hover:bg-slateDark hover:text-white transition-all flex items-center gap-2 interactive-target">
+                    <i data-lucide="file-text" class="w-4 h-4 text-brandPink"></i> Fetch Offline Resume (.PDF)
+                </a>
+            </div>
+        </header>
+
+        <!-- ================= INFINITE MOVING TECH STACK MARQUEE ================= -->
+        <section class="w-full border-t border-b border-borderFine bg-white py-6 overflow-hidden relative">
+            <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-creamCanvas to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-creamCanvas to-transparent z-10 pointer-events-none"></div>
+            
+            <div class="flex whitespace-nowrap w-[200%] animate-marquee no-scrollbar">
+                <div class="flex justify-around min-w-full items-center gap-16 text-xs font-mono font-medium tracking-widest text-slateDark">
+                    <div class="flex items-center gap-3"><i data-lucide="table" class="w-4 h-4 text-brandPink"></i> MICROSOFT EXCEL</div>
+                    <div class="flex items-center gap-3"><i data-lucide="database" class="w-4 h-4 text-brandPink"></i> SQL SERVER</div>
+                    <div class="flex items-center gap-3"><i data-lucide="code-2" class="w-4 h-4 text-brandPink"></i> PYTHON ANALYTICS</div>
+                    <div class="flex items-center gap-3"><i data-lucide="bar-chart-3" class="w-4 h-4 text-brandPink"></i> POWER BI PLATFORMS</div>
+                    <div class="flex items-center gap-3"><i data-lucide="git-fork" class="w-4 h-4 text-brandPink"></i> GIT SYSTEMS</div>
+                    <div class="flex items-center gap-3"><i data-lucide="github" class="w-4 h-4 text-brandPink"></i> GITHUB CORE</div>
+                    <div class="flex items-center gap-3"><i data-lucide="pie-chart" class="w-4 h-4 text-brandPink"></i> TABLEAU PUBLIC</div>
+                </div>
+                <div class="flex justify-around min-w-full items-center gap-16 text-xs font-mono font-medium tracking-widest text-slateDark">
+                    <div class="flex items-center gap-3"><i data-lucide="table" class="w-4 h-4 text-brandPink"></i> MICROSOFT EXCEL</div>
+                    <div class="flex items-center gap-3"><i data-lucide="database" class="w-4 h-4 text-brandPink"></i> SQL SERVER</div>
+                    <div class="flex items-center gap-3"><i data-lucide="code-2" class="w-4 h-4 text-brandPink"></i> PYTHON ANALYTICS</div>
+                    <div class="flex items-center gap-3"><i data-lucide="bar-chart-3" class="w-4 h-4 text-brandPink"></i> POWER BI PLATFORMS</div>
+                    <div class="flex items-center gap-3"><i data-lucide="git-fork" class="w-4 h-4 text-brandPink"></i> GIT SYSTEMS</div>
+                    <div class="flex items-center gap-3"><i data-lucide="github" class="w-4 h-4 text-brandPink"></i> GITHUB CORE</div>
+                    <div class="flex items-center gap-3"><i data-lucide="pie-chart" class="w-4 h-4 text-brandPink"></i> TABLEAU PUBLIC</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= DATA PROJECTS CATALOG (FOCAL POINT AT TOP) ================= -->
+        <section id="projects" class="max-w-6xl mx-auto px-8 space-y-8">
+            <div class="border-b border-borderFine pb-4 flex justify-between items-end">
+                <div>
+                    <span class="text-[10px] font-mono text-slateDark/40 uppercase tracking-widest">[Analytical Repository Cluster]</span>
+                    <h2 class="text-4xl font-editorial font-bold mt-1">Case Studies</h2>
+                </div>
+                <span class="text-xs font-mono text-brandPink font-medium">INDEX // 01</span>
+            </div>
+
+            <!-- Case Study Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Project 1 -->
+                <div class="bg-white border border-borderFine p-6 flex flex-col justify-between group hover:border-brandPink transition-all">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center text-[10px] font-mono tracking-wider">
+                            <span class="text-brandPink">[ENVIRONMENTAL FRAMEWORK]</span>
+                            <span class="text-slateDark/40">01</span>
+                        </div>
+                        <h3 class="text-2xl font-editorial font-bold">Global Air Quality Analysis</h3>
+                        <p class="text-xs font-serif-body text-slateDark/80 leading-relaxed text-lg">
+                            An analytical analysis into environmental trend indexes across ten years, organizing historical files into interactive data summaries.
+                        </p>
+                    </div>
+                    <div class="pt-6">
+                        <a href="global-dashboard.html" class="w-full text-center py-3 bg-slateDark text-white font-mono text-xs uppercase tracking-wider hover:bg-brandPink transition-all block interactive-target">
+                            View Case Study
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white border border-borderFine p-6 flex flex-col justify-between group hover:border-brandPink transition-all">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center text-[10px] font-mono tracking-wider">
+                            <span class="text-brandPink">[CONSUMER INTEL]</span>
+                            <span class="text-slateDark/40">02</span>
+                        </div>
+                        <h3 class="text-2xl font-editorial font-bold">Netflix Engagement Matrix</h3>
+                        <p class="text-xs font-serif-body text-slateDark/80 leading-relaxed text-lg">
+                            Mapping viewership index fluctuations, cross-regional demand changes, and massive global library changes over timeline scales.
+                        </p>
+                    </div>
+                    <div class="pt-6">
+                        <a href="netflix-analysis.html" class="w-full text-center py-3 bg-slateDark text-white font-mono text-xs uppercase tracking-wider hover:bg-brandPink transition-all block interactive-target">
+                            View Case Study
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white border border-borderFine p-6 flex flex-col justify-between opacity-50">
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center text-[10px] font-mono tracking-wider">
+                            <span class="text-slateDark/40">[METRIC DEPLOYMENT]</span>
+                            <span class="text-slateDark/40">03</span>
+                        </div>
+                        <h3 class="text-2xl font-editorial font-bold">Retention Engine</h3>
+                        <p class="text-xs font-serif-body text-slateDark/80 leading-relaxed text-lg">
+                            Structuring custom aggregations to systematically map cohort customer churn drop-offs and track true corporate lifetime value scales.
+                        </p>
+                    </div>
+                    <div class="pt-6">
+                        <div class="w-full text-center py-3 bg-borderFine text-slateDark/40 font-mono text-xs uppercase tracking-wider cursor-not-allowed">
+                            Locked Cache
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================= ABOUT INTERFACE GRID ================= -->
+        <section id="about-profile" class="max-w-6xl mx-auto px-8 space-y-12">
+            <div class="border-b border-borderFine pb-4 flex justify-between items-end">
+                <div>
+                    <span class="text-[10px] font-mono text-slateDark/40 uppercase tracking-widest">[Biographical Registry Frame]</span>
+                    <h2 class="text-4xl font-editorial font-bold mt-1">Profile Matrix</h2>
+                </div>
+                <span class="text-xs font-mono text-brandPink font-medium">INDEX // 02</span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                
+                <!-- Left Identity Card Column -->
+                <div class="lg:col-span-4 soft-panel p-8 flex flex-col items-center text-center space-y-6">
+                    <div class="w-40 h-40 rounded-full border border-borderFine p-2 bg-creamCanvas overflow-hidden relative shadow-sm">
+                        <!-- Direct high-resolution embed of your straight-hair portrait profile photo -->
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400" alt="Yanda Portrait" class="w-full h-full object-cover rounded-full filter grayscale contrast-115">
+                    </div>
+                    
+                    <div class="space-y-1">
+                        <h3 class="text-2xl font-editorial font-bold tracking-tight">Yanda</h3>
+                        <p class="text-xs font-mono text-slateDark/50 tracking-wide">Data Analyst & UI Architect</p>
+                    </div>
+
+                    <div class="w-full border-t border-borderFine my-2"></div>
+
+                    <!-- Verified Meta Directory Links -->
+                    <div class="w-full space-y-3 font-mono text-xs text-left text-slateDark/80">
+                        <div class="flex items-center gap-3"><i data-lucide="map-pin" class="w-4 h-4 text-brandPink"></i> Gauteng, South Africa</div>
+                        <div class="flex items-center gap-3"><i data-lucide="mail" class="w-4 h-4 text-brandPink"></i> yanda@novelora.inc</div>
+                        <div class="flex items-center gap-3"><i data-lucide="github" class="w-4 h-4 text-brandPink"></i> github.com/yanda</div>
+                        <div class="flex items-center gap-3"><i data-lucide="globe" class="w-4 h-4 text-brandPink"></i> novelora.inc</div>
+                    </div>
+                </div>
+
+                <!-- Right Information Layout Matrix -->
+                <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    
+                    <!-- Bio Statement Card -->
+                    <div class="soft-panel p-8 md:col-span-2 space-y-4">
+                        <span class="text-[9px] font-mono px-2 py-0.5 bg-creamCanvas text-slateDark/60 border border-borderFine">MANIFESTATION STRATEGY</span>
+                        <h4 class="text-xl font-editorial font-bold text-slateDark">Statement of Direction</h4>
+                        <p class="text-sm font-serif-body text-slateDark/80 leading-relaxed">
+                            I construct high-fidelity analytics platforms that treat metric architecture as a narrative art. Utilizing data system logic alongside an absolute dedication to high-end user testing flows, I produce technical layouts engineered for seamless executive deployment.
+                        </p>
+                    </div>
+
+                    <!-- Core Operations Skill Cluster -->
+                    <div class="soft-panel p-6 space-y-4">
+                        <h4 class="text-xs font-mono uppercase tracking-wider text-slateDark/50 flex items-center gap-2">
+                            <i data-lucide="layers" class="w-4 h-4 text-brandPink"></i> Architectural Domain
+                        </h4>
+                        <div class="grid grid-cols-2 gap-3 text-xs font-mono text-slateDark/90">
+                            <div class="p-2 bg-creamCanvas border border-borderFine">DATA WRANGLING</div>
+                            <div class="p-2 bg-creamCanvas border border-borderFine">KPI MODELING</div>
+                            <div class="p-2 bg-creamCanvas border border-borderFine">DB QUERYING</div>
+                            <div class="p-2 bg-creamCanvas border border-borderFine">VERSION CONTROL</div>
+                        </div>
+                    </div>
+
+                    <!-- Structural Systems Focus -->
+                    <div class="soft-panel p-6 space-y-4">
+                        <h4 class="text-xs font-mono uppercase tracking-wider text-slateDark/50 flex items-center gap-2">
+                            <i data-lucide="cpu" class="w-4 h-4 text-brandPink"></i> Operations Blueprint
+                        </h4>
+                        <div class="space-y-2 text-xs text-slateDark/80 leading-relaxed font-light">
+                            <p><strong>Environment Isolation:</strong> Building highly asynchronous documentation systems ready for fast corporate onboarding.</p>
+                            <p><strong>UX Balance:</strong> Designing dashboards that are instantly readable, balanced, and visually refined.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= THE CORE DATA PROCESS ================= -->
+        <section id="data-process" class="max-w-6xl mx-auto px-8 space-y-16">
+            <div class="border-b border-borderFine pb-4 flex justify-between items-end">
+                <div>
+                    <span class="text-[10px] font-mono text-slateDark/40 uppercase tracking-widest">[Sequential Pipeline Blueprint]</span>
+                    <h2 class="text-4xl font-editorial font-bold mt-1">My Process</h2>
+                </div>
+                <span class="text-xs font-mono text-brandPink font-medium">INDEX // 03</span>
+            </div>
+
+            <!-- Minimalist Growing Circle Infographic Track -->
+            <div class="space-y-16">
+                <div class="flex items-center justify-start gap-4 md:gap-12 overflow-x-auto py-8 no-scrollbar">
+                    
+                    <!-- Node 1 -->
+                    <div class="flex items-center gap-4 shrink-0">
+                        <div class="w-16 h-16 md:w-20 md:h-20 bg-brandPink rounded-full flex items-center justify-center text-white relative shadow-md">
+                            <i data-lucide="arrow-right" class="absolute right-2 md:right-3 w-4 h-4 text-white/50"></i>
+                            <span class="text-lg font-mono font-bold">01</span>
+                        </div>
+                        <div class="h-[1px] w-8 md:w-16 bg-slateDark/20"></div>
+                    </div>
+
+                    <!-- Node 2 -->
+                    <div class="flex items-center gap-4 shrink-0">
+                        <div class="w-24 h-24 md:w-28 md:h-28 bg-brandPink rounded-full flex items-center justify-center text-white relative shadow-lg">
+                            <i data-lucide="arrow-right" class="absolute right-3 md:right-4 w-5 h-5 text-white/50"></i>
+                            <span class="text-2xl font-mono font-bold">02</span>
+                        </div>
+                        <div class="h-[1px] w-8 md:w-16 bg-slateDark/20"></div>
+                    </div>
+
+                    <!-- Node 3 -->
+                    <div class="flex items-center gap-4 shrink-0">
+                        <div class="w-32 h-32 md:w-36 md:h-36 bg-brandPink rounded-full flex items-center justify-center text-white relative shadow-xl">
+                            <i data-lucide="arrow-right" class="absolute right-4 md:right-5 w-6 h-6 text-white/50"></i>
+                            <span class="text-4xl font-mono font-bold">03</span>
+                        </div>
+                        <div class="h-[1px] w-8 md:w-16 bg-slateDark/20"></div>
+                    </div>
+
+                    <!-- Node 4 -->
+                    <div class="flex items-center shrink-0">
+                        <div class="w-40 h-40 md:w-48 md:h-48 bg-brandPink rounded-full flex items-center justify-center text-white relative shadow-2xl">
+                            <div class="absolute -top-4 right-10 bg-slateDark px-2 py-0.5 text-[8px] font-mono tracking-widest text-white uppercase">DELIVERY</div>
+                            <span class="text-6xl font-mono font-bold">04</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Descriptive Content Mapping Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 border-t border-borderFine pt-8">
+                    <div class="space-y-2">
+                        <span class="text-xs font-mono text-brandPink font-bold">01 / EXTRACTION & AUDIT</span>
+                        <h4 class="text-lg font-editorial font-bold">Data Ingestion</h4>
+                        <p class="text-xs text-slateDark/70 font-light leading-relaxed">
+                            Connecting directly to raw datastores, flat CSV streams, and multi-relational arrays. Auditing integrity markers, structural noise, and tracking initial metadata profiles.
+                        </p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <span class="text-xs font-mono text-brandPink font-bold">02 / DATA CLEANING</span>
+                        <h4 class="text-lg font-editorial font-bold">Wrangling & Normalization</h4>
+                        <p class="text-xs text-slateDark/70 font-light leading-relaxed">
+                            Fixing scrambled entries, standardizing dates, isolating blank records, and mapping clear join keys via SQL or Pandas tables so calculations scale seamlessly.
+                        </p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <span class="text-xs font-mono text-brandPink font-bold">03 / COHORT TRANSFORMS</span>
+                        <h4 class="text-lg font-editorial font-bold">Statistical Synthesis</h4>
+                        <p class="text-xs text-slateDark/70 font-light leading-relaxed">
+                            Executing complex metrics aggregations, multi-variable logic calculations, and structuring pivot models to capture high-impact business indicators.
+                        </p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <span class="text-xs font-mono text-brandPink font-bold">04 / STRATEGIC VISUALS</span>
+                        <h4 class="text-lg font-editorial font-bold">Interactive Narrative</h4>
+                        <p class="text-xs text-slateDark/70 font-light leading-relaxed">
+                            Deploying the cleaned pipelines into sharp visual report canvases. Every chart is built strictly for executive review: user-friendly, clean, and strategic.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-borderFine bg-white py-12 text-center text-xs font-mono text-slateDark/40">
+        <p>&copy; 2026 AYANDA Personal Data Suite. All System Configurations Reserved.</p>
+    </footer>
+
+    <script>
+        // Initialize Graphic Lucide Elements
+        lucide.createIcons();
+
+        // Custom Cursor Follower Engine
+        const cursor = document.getElementById('interactive-cursor');
+        
+        window.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Highlight Activation Hooks
+        const targets = document.querySelectorAll('.interactive-target');
+        targets.forEach(item => {
+            item.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+            item.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+        });
+    </script>
+</body>
+</html>

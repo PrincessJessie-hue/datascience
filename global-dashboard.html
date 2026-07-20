@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Air Quality & Deforestation Case Study</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forestGreen: '#1E3F20',
+                        earthBrown: '#8C6239',
+                        sandBg: '#FDFBF7',
+                        stoneGray: '#1C1D1C',
+                        mossLight: '#E8EFE9',
+                        textDark: '#2C3531',
+                        borderStone: '#E0DBCE'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts: Playfair Display for editorial impact, Inter for UI text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF7;
+            color: #2C3531;
+        }
+        .font-serif-display {
+            font-family: 'Playfair Display', serif;
+        }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #FDFBF7; }
+        ::-webkit-scrollbar-thumb { background: #E0DBCE; border-radius: 3px; }
+    </style>
+</head>
+<body class="antialiased selection:bg-forestGreen selection:text-white">
+
+    <!-- Premium Navigation -->
+    <nav class="sticky top-0 z-50 w-full border-b border-borderStone bg-sandBg/90 backdrop-blur-md px-6 py-4">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-xl font-serif-display font-bold text-forestGreen tracking-wide">EcoAnalytics</span>
+                <span class="text-[10px] font-mono tracking-widest text-earthBrown uppercase border-l border-borderStone pl-3 hidden sm:inline">Global Asset Tracking</span>
+            </div>
+            <a href="https://github.com/PrincessJessie-hue/global-air-quality-deforestation-dashboard" target="_blank" class="text-xs font-medium border border-borderStone hover:bg-mossLight text-forestGreen px-4 py-2 rounded transition-all flex items-center gap-2">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> Repository
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Editorial Layout Container -->
+    <main class="max-w-4xl mx-auto px-6 pt-16 pb-32 space-y-24">
+        
+        <!-- ================= HERO SECTION ================= -->
+        <header class="space-y-6">
+            <h1 class="text-5xl md:text-7xl font-serif-display text-forestGreen leading-tight tracking-tight">
+                Global Air Quality & Deforestation Analysis
+            </h1>
+            <p class="text-lg md:text-xl text-stoneGray/80 font-light max-w-2xl leading-relaxed">
+                Evaluating global atmospheric shifts and forest cover deprecation across an analytical ten-year horizon using structured Excel ecosystems.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2 text-xs font-mono">
+                <span class="px-3 py-1.5 bg-mossLight text-forestGreen rounded font-medium">ROLE: INDEPENDENT ANALYST</span>
+                <span class="px-3 py-1.5 bg-white border border-borderStone text-stoneGray/70 rounded">EXCEL PIVOT METRICS</span>
+                <span class="px-3 py-1.5 bg-white border border-borderStone text-stoneGray/70 rounded">KPI FORECASTING</span>
+            </div>
+        </header>
+
+        <!-- ================= HERO STATISTICS PANEL ================= -->
+        <section class="grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-b border-borderStone py-8">
+            <div class="space-y-1">
+                <span class="text-[10px] font-mono text-earthBrown uppercase tracking-wider block">Temporal Scope</span>
+                <div class="text-3xl font-serif-display font-bold text-forestGreen">2014 – 2023</div>
+                <span class="text-[10px] text-stoneGray/60 block">10-Year Data Horizon</span>
+            </div>
+            <div class="space-y-1">
+                <span class="text-[10px] font-mono text-earthBrown uppercase tracking-wider block">Peak AQI Value</span>
+                <div class="text-3xl font-serif-display font-bold text-forestGreen">328.42</div>
+                <span class="text-[10px] text-stoneGray/60 block">Myanmar Average</span>
+            </div>
+            <div class="space-y-1">
+                <span class="text-[10px] font-mono text-earthBrown uppercase tracking-wider block">Max Deforestation</span>
+                <div class="text-3xl font-serif-display font-bold text-forestGreen">4.52%</div>
+                <span class="text-[10px] text-stoneGray/60 block">Ethiopia Average</span>
+            </div>
+            <div class="space-y-1">
+                <span class="text-[10px] font-mono text-earthBrown uppercase tracking-wider block">Core Targets</span>
+                <div class="text-3xl font-serif-display font-bold text-forestGreen">14</div>
+                <span class="text-[10px] text-stoneGray/60 block">Variables Tracked</span>
+            </div>
+        </section>
+
+        <!-- ================= PROJECT OVERVIEW ================= -->
+        <section class="space-y-4">
+            <div class="flex items-center gap-2 text-earthBrown font-mono text-xs uppercase tracking-wider">
+                <span>[01] Context Strategy</span>
+            </div>
+            <h2 class="text-2xl font-serif-display font-bold text-forestGreen">Project Overview</h2>
+            <div class="space-y-4 text-stoneGray/80 text-sm md:text-base leading-relaxed border-l-2 border-forestGreen pl-4">
+                <p>
+                    Environmental issues such as air pollution and deforestation continue to affect public health, biodiversity, and long-term sustainability. Governments and environmental organisations need reliable data to understand where pollution is worsening and where conservation efforts should be prioritised.
+                </p>
+                <p>
+                    In this project, I analysed a global environmental dataset covering multiple countries between 2014 and 2023. Using Microsoft Excel, I explored trends in air quality, deforestation, and environmental indicators to identify patterns that could support environmental decision-making.
+                </p>
+                <p>
+                    The final deliverable is an interactive Excel dashboard presenting key performance indicators, country comparisons, and long-term environmental trends.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= INDEPENDENT RESPONSIBILITIES ================= -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <div class="text-earthBrown font-mono text-xs uppercase tracking-wider">[02] Execution</div>
+                <h2 class="text-xl font-serif-display font-bold text-forestGreen">My Footprint & Workflow Role</h2>
+                <p class="text-xs text-stoneGray/70 leading-relaxed">
+                    Operating as the standalone developer, I structured the full sequence of data pipeline migrations from raw source compilation down to visual presentation layers.
+                </p>
+            </div>
+            <div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-2 gap-3 text-xs font-mono">
+                <div class="p-3 bg-white border border-borderStone rounded flex items-center gap-2 text-stoneGray/80">
+                    <span class="h-1.5 w-1.5 rounded-full bg-forestGreen"></span> Dataset Preparation & Cleaning
+                </div>
+                <div class="p-3 bg-white border border-borderStone rounded flex items-center gap-2 text-stoneGray/80">
+                    <span class="h-1.5 w-1.5 rounded-full bg-forestGreen"></span> Exploratory Analysis (EDA)
+                </div>
+                <div class="p-3 bg-white border border-borderStone rounded flex items-center gap-2 text-stoneGray/80">
+                    <span class="h-1.5 w-1.5 rounded-full bg-forestGreen"></span> PivotTable Schema Designs
+                </div>
+                <div class="p-3 bg-white border border-borderStone rounded flex items-center gap-2 text-stoneGray/80">
+                    <span class="h-1.5 w-1.5 rounded-full bg-forestGreen"></span> Interactive Interface Engineering
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= METADATA PROFILE & TOOLS ================= -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="space-y-3">
+                <h3 class="text-xs font-mono uppercase tracking-widest text-earthBrown">Dataset Attributes</h3>
+                <div class="p-4 bg-white border border-borderStone rounded text-xs space-y-2 text-stoneGray/80">
+                    <p><strong>Geographic Profiles:</strong> Country, City, Year Indexing</p>
+                    <p><strong>Atmospheric Metrics:</strong> AQI Levels, PM2.5, PM10 Particulates, CO₂ Emissions</p>
+                    <p><strong>Ecological Indices:</strong> Deforestation Rates, Afforestation, Green Space Ratio</p>
+                    <p><strong>Socio-Demographics:</strong> Population Growth, Vehicle/Industry Deltas, Average Life Expectancy</p>
+                </div>
+            </div>
+            <div class="space-y-3">
+                <h3 class="text-xs font-mono uppercase tracking-widest text-earthBrown">Infrastructure Stack</h3>
+                <div class="p-4 bg-white border border-borderStone rounded text-xs space-y-3 text-stoneGray/80">
+                    <div class="flex items-center gap-2"><strong class="text-forestGreen">Microsoft Excel:</strong> Core processing, text expression alignment, formula profiling</div>
+                    <div class="flex items-center gap-2"><strong class="text-forestGreen">Pivot Ecosystems:</strong> Multi-relational data synthesis tables and interactive link charts</div>
+                    <div class="flex items-center gap-2"><strong class="text-forestGreen">Version Deployment:</strong> GitHub open storage system integration</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= ENGAGING INTERACTIVE SIMULATOR ================= -->
+        <section class="space-y-6">
+            <div class="space-y-2">
+                <div class="text-earthBrown font-mono text-xs uppercase tracking-wider">[03] Dashboard Preview Matrix</div>
+                <h2 class="text-2xl font-serif-display font-bold text-forestGreen">Interactive Target Variable Simulator</h2>
+                <p class="text-xs text-stoneGray/70 max-w-xl">
+                    Select a dynamic exploration view underneath to toggle critical metrics monitored across high-priority regional zones uncovered within the Excel pipeline.
+                </p>
+            </div>
+
+            <!-- Dynamic Simulator Workspace -->
+            <div class="bg-white border border-borderStone rounded-lg overflow-hidden shadow-sm">
+                <!-- Tab Controls Bar -->
+                <div class="bg-mossLight/30 border-b border-borderStone p-4 flex flex-wrap justify-between items-center gap-2">
+                    <div class="flex items-center gap-2 text-xs font-mono font-medium text-forestGreen">
+                        <i data-lucide="sliders" class="w-4 h-4 text-earthBrown"></i>
+                        <span id="matrix-lbl">ATMOSPHERIC POLLUTION MATRIX (AQI)</span>
+                    </div>
+                    <div class="flex gap-1 bg-sandBg p-1 rounded border border-borderStone">
+                        <button onclick="toggleMetric('aqi')" id="btn-aqi" class="px-3 py-1 text-xs font-mono rounded bg-forestGreen text-white transition-all">AIR QUALITY FOCUS</button>
+                        <button onclick="toggleMetric('deforest')" id="btn-deforest" class="px-3 py-1 text-xs font-mono rounded text-stoneGray/60 hover:text-stoneGray transition-all">FOREST LOSS FOCUS</button>
+                    </div>
+                </div>
+
+                <!-- Simulation Data Visual Panels -->
+                <div class="p-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Left: Focal Zone Card -->
+                    <div class="p-4 bg-sandBg border border-borderStone rounded space-y-3">
+                        <span class="text-[9px] font-mono tracking-widest uppercase text-earthBrown block">Primary Critical Territory</span>
+                        <div class="flex justify-between items-baseline">
+                            <span id="sim-country" class="text-2xl font-serif-display font-bold text-forestGreen">Myanmar</span>
+                            <span id="sim-metric-val" class="text-4xl font-serif-display font-bold text-earthBrown">328.42</span>
+                        </div>
+                        <p id="sim-desc" class="text-xs text-stoneGray/70 leading-relaxed font-light">
+                            Recorded the highest average Air Quality Index globally, demanding rapid environmental oversight updates.
+                        </p>
+                    </div>
+
+                    <!-- Right: Historical Timeline Trend Vector -->
+                    <div class="flex flex-col justify-between space-y-4">
+                        <div class="space-y-2">
+                            <span class="text-[9px] font-mono tracking-widest uppercase text-earthBrown block">10-Year Global Benchmark Vector</span>
+                            <div class="space-y-2">
+                                <div>
+                                    <div class="flex justify-between text-xs font-mono text-stoneGray/60"><span id="lbl-y1">2014 Baseline</span><span id="val-y1" class="text-stoneGray font-bold">128.98</span></div>
+                                    <div class="w-full bg-mossLight h-2 rounded-full overflow-hidden"><div id="bar-y1" class="bg-forestGreen h-2 rounded-full transition-all duration-500" style="width: 75%"></div></div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-xs font-mono text-stoneGray/60"><span id="lbl-y2">2022 Milestone Peak</span><span id="val-y2" class="text-stoneGray font-bold">136.99</span></div>
+                                    <div class="w-full bg-mossLight h-2 rounded-full overflow-hidden"><div id="bar-y2" class="bg-forestGreen h-2 rounded-full transition-all duration-500" style="width: 89%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action CTAs -->
+            <div class="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+                <a href="https://github.com/PrincessJessie-hue/global-air-quality-deforestation-dashboard" target="_blank" class="px-6 py-3 bg-forestGreen hover:bg-emerald-950 text-white font-mono text-xs font-bold rounded shadow transition-all tracking-wider text-center flex items-center justify-center gap-2">
+                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> LAUNCH FULL EXTRACT ON GITHUB
+                </a>
+            </div>
+        </section>
+
+        <!-- ================= SEGREGATED TARGET ANALYSIS QUESTIONS ================= -->
+        <section class="space-y-4">
+            <h3 class="text-xs font-mono uppercase tracking-widest text-earthBrown">Target Business Inquiries Addressed</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono text-stoneGray/80">
+                <div class="p-3 bg-white border border-borderStone rounded flex items-start gap-2">
+                    <span class="text-forestGreen font-bold">Q1:</span> Poor atmospheric distributions across regional metrics.
+                </div>
+                <div class="p-3 bg-white border border-borderStone rounded flex items-start gap-2">
+                    <span class="text-forestGreen font-bold">Q2:</span> Peak localized deforestation rates across territories.
+                </div>
+                <div class="p-3 bg-white border border-borderStone rounded flex items-start gap-2">
+                    <span class="text-forestGreen font-bold">Q3:</span> Annual structural timeline trend variance across standard spans.
+                </div>
+                <div class="p-3 bg-white border border-borderStone rounded flex items-start gap-2">
+                    <span class="text-forestGreen font-bold">Q4:</span> Co-relational evaluation mapping linking pollution indices with canopy depletion.
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= SYSTEM INSIGHT EVIDENCE ARRAYS ================= -->
+        <section class="space-y-6">
+            <div class="space-y-2">
+                <div class="text-earthBrown font-mono text-xs uppercase tracking-wider">[04] Analytical Verification</div>
+                <h2 class="text-2xl font-serif-display font-bold text-forestGreen">Granular Project Catalog Findings</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Card Item 1 -->
+                <div class="bg-white border border-borderStone p-6 rounded space-y-4 shadow-sm">
+                    <div class="flex items-center gap-3 border-b border-mossLight pb-3">
+                        <span class="px-2 py-1 bg-mossLight text-forestGreen text-[10px] font-mono rounded font-bold">FINDING 01</span>
+                        <h4 class="text-sm font-bold text-stoneGray">Myanmar recorded the highest average Air Quality Index (AQI).</h4>
+                    </div>
+                    <p class="text-xs text-stoneGray/70 leading-relaxed font-light">
+                        <strong>Observed Data Architecture:</strong> Reached an average AQI profile level of 328.42, far superseding neighboring geographic index points.
+                    </p>
+                    <div class="p-3 bg-sandBg border-l-2 border-earthBrown text-xs text-stoneGray/80">
+                        <strong class="text-earthBrown font-medium block mb-1">➔ Strategic Business Insight:</strong> Persistent high AQI levels suggest long-term exposure to air pollution, which can negatively impact public health, economic productivity, and healthcare systems.
+                    </div>
+                </div>
+
+                <!-- Card Item 2 -->
+                <div class="bg-white border border-borderStone p-6 rounded space-y-4 shadow-sm">
+                    <div class="flex items-center gap-3 border-b border-mossLight pb-3">
+                        <span class="px-2 py-1 bg-mossLight text-forestGreen text-[10px] font-mono rounded font-bold">FINDING 02</span>
+                        <h4 class="text-sm font-bold text-stoneGray">Ethiopia recorded the highest average deforestation rate.</h4>
+                    </div>
+                    <p class="text-xs text-stoneGray/70 leading-relaxed font-light">
+                        <strong>Observed Data Architecture:</strong> Logged an extreme average depletion value tracking at 4.52%, signaling constant resource infrastructure tension.
+                    </p>
+                    <div class="p-3 bg-sandBg border-l-2 border-earthBrown text-xs text-stoneGray/80">
+                        <strong class="text-earthBrown font-medium block mb-1">➔ Strategic Business Insight:</strong> High deforestation rates may contribute to biodiversity loss, reduced carbon storage, and increased environmental degradation, highlighting the need for stronger conservation policies.
+                    </div>
+                </div>
+
+                <!-- Card Item 3 -->
+                <div class="bg-white border border-borderStone p-6 rounded space-y-4 shadow-sm">
+                    <div class="flex items-center gap-3 border-b border-mossLight pb-3">
+                        <span class="px-2 py-1 bg-mossLight text-forestGreen text-[10px] font-mono rounded font-bold">FINDING 03</span>
+                        <h4 class="text-sm font-bold text-stoneGray">Average AQI remained consistently high throughout the ten-year period.</h4>
+                    </div>
+                    <p class="text-xs text-stoneGray/70 leading-relaxed font-light">
+                        <strong>Observed Data Architecture:</strong> Air quality gradually worsened from 128.98 in 2014 to 136.99 in 2022, before showing a slight decrease in 2023.
+                    </p>
+                    <div class="p-3 bg-sandBg border-l-2 border-earthBrown text-xs text-stoneGray/80">
+                        <strong class="text-earthBrown font-medium block mb-1">➔ Strategic Business Insight:</strong> Although the decline in 2023 is encouraging, the long-term trend suggests that air pollution remains a persistent environmental challenge.
+                    </div>
+                </div>
+
+                <!-- Card Item 4 -->
+                <div class="bg-white border border-borderStone p-6 rounded space-y-4 shadow-sm">
+                    <div class="flex items-center gap-3 border-b border-mossLight pb-3">
+                        <span class="px-2 py-1 bg-mossLight text-forestGreen text-[10px] font-mono rounded font-bold">FINDING 04</span>
+                        <h4 class="text-sm font-bold text-stoneGray">Countries with higher deforestation rates generally also recorded higher AQI values.</h4>
+                    </div>
+                    <p class="text-xs text-stoneGray/70 leading-relaxed font-light">
+                        <strong>Observed Data Architecture:</strong> Matrix distribution arrays indicate clear trend intersections where canopy loss directly connects with escalated atmospheric micro-particle indicators.
+                    </p>
+                    <div class="p-3 bg-sandBg border-l-2 border-earthBrown text-xs text-stoneGray/80">
+                        <strong class="text-earthBrown font-medium block mb-1">➔ Strategic Business Insight:</strong> While this analysis does not establish a direct causal relationship, it suggests that environmental degradation and air pollution may be linked, making both areas important priorities for future environmental policy and research.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= STRATEGIC ACTION RECOMMENDATIONS ================= -->
+        <section class="space-y-4">
+            <div class="text-earthBrown font-mono text-xs uppercase tracking-wider">[05] Action Framework</div>
+            <h2 class="text-2xl font-serif-display font-bold text-forestGreen">Strategic Recommendations</h2>
+            <div class="bg-white border border-borderStone p-6 rounded space-y-3 text-sm text-stoneGray/85 leading-relaxed">
+                <p class="flex items-start gap-2"><span class="text-forestGreen font-bold">1.</span> Increase investment in air quality monitoring programmes to isolate urban industrial emissions spikes early.</p>
+                <p class="flex items-start gap-2"><span class="text-forestGreen font-bold">2.</span> Strengthen forest conservation and aggressive reforestation initiatives in highly challenged sectors.</p>
+                <p class="flex items-start gap-2"><span class="text-forestGreen font-bold">3.</span> Promote cleaner industrial practices and deploy emission mitigation strategies across manufacturing areas.</p>
+                <p class="flex items-start gap-2"><span class="text-forestGreen font-bold">4.</span> Expand urban green spaces to scale natural air filtering capacities and improve environmental quality.</p>
+                <p class="flex items-start gap-2"><span class="text-forestGreen font-bold">5.</span> Continue collecting structural environmental data to monitor long-term trends and evaluate policy effectiveness.</p>
+            </div>
+        </section>
+
+        <!-- ================= CORE ACQUIRED SKILLS MATRIX ================= -->
+        <section class="space-y-4">
+            <h3 class="text-xs font-mono uppercase tracking-widest text-earthBrown">Technical Skills Architecture Refined</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-stoneGray/80 font-mono">
+                <div class="p-3 bg-mossLight/40 rounded border border-borderStone">✓ Clean and prepare complex, real-world datasets</div>
+                <div class="p-3 bg-mossLight/40 rounded border border-borderStone">✓ Analyze multi-variable records via Pivot Ecosystems</div>
+                <div class="p-3 bg-mossLight/40 rounded border border-borderStone">✓ Translate metadata arrays into clear business value layouts</div>
+                <div class="p-3 bg-mossLight/40 rounded border border-borderStone">✓ Interface design optimizations for corporate reviews</div>
+            </div>
+        </section>
+
+        <!-- ================= CONCLUSION ================= -->
+        <section class="text-center space-y-3 pt-6 border-t border-borderStone">
+            <h4 class="text-lg font-serif-display font-bold text-forestGreen">Case Study Summary Conclusion</h4>
+            <p class="text-stoneGray/70 text-sm max-w-2xl mx-auto leading-relaxed font-light">
+                This project demonstrates the capacity to convert messy, multi-dimensional environmental metrics into a high-level corporate decision support interface using straightforward data tools.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-borderStone bg-white py-12 text-center text-xs font-mono text-stoneGray/50">
+        <p>&copy; 2026 Strategy Environmental Reviews Portfolio Hub. Built with hand-coded clean semantic layout scripts.</p>
+    </footer>
+
+    <!-- Interactive Data Engine JavaScript Switcher -->
+    <script>
+        const metrics = {
+            aqi: {
+                label: "ATMOSPHERIC POLLUTION MATRIX (AQI)",
+                country: "Myanmar",
+                val: "328.42",
+                desc: "Recorded the highest average Air Quality Index globally, demanding rapid environmental oversight updates.",
+                y1Val: "128.98", y1Width: "75%",
+                y2Val: "136.99", y2Width: "89%",
+                lbl1: "2014 Baseline", lbl2: "2022 Milestone Peak"
+            },
+            deforest: {
+                label: "CANOPY LOSS & DEFORESTATION RATIO",
+                country: "Ethiopia",
+                val: "4.52%",
+                desc: "Logged the most extreme average forest cover deprecation rate, showing urgent requirements for reforestation tracking.",
+                y1Val: "0.85%", y1Width: "30%",
+                y2Val: "4.52%", y2Width: "95%",
+                lbl1: "Global Minimum Avg", lbl2: "Focal Peak Max Level"
+            }
+        };
+
+        function toggleMetric(key) {
+            const data = metrics[key];
+            
+            document.getElementById('matrix-lbl').innerText = data.label;
+            document.getElementById('sim-country').innerText = data.country;
+            document.getElementById('sim-metric-val').innerText = data.val;
+            document.getElementById('sim-desc').innerText = data.desc;
+            
+            document.getElementById('lbl-y1').innerText = data.lbl1;
+            document.getElementById('val-y1').innerText = data.y1Val;
+            document.getElementById('bar-y1').style.width = data.y1Width;
+            
+            document.getElementById('lbl-y2').innerText = data.lbl2;
+            document.getElementById('val-y2').innerText = data.y2Val;
+            document.getElementById('bar-y2').style.width = data.y2Width;
+
+            // Update tab button styles
+            ['aqi', 'deforest'].forEach(metricKey => {
+                const btn = document.getElementById(`btn-${metricKey}`);
+                if(metricKey === key) {
+                    btn.className = "px-3 py-1 text-xs font-mono rounded bg-forestGreen text-white transition-all";
+                } else {
+                    btn.className = "px-3 py-1 text-xs font-mono rounded text-stoneGray/60 hover:text-stoneGray transition-all";
+                }
+            });
+        }
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>

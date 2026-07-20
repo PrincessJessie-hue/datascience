@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Content Intelligence Case Study</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        netflixRed: '#E50914',
+                        cinemaBlack: '#0B0B0B',
+                        cardGray: '#161616',
+                        borderGray: '#262626',
+                        textMuted: '#A3A3A3'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts: Bebas Neue for Netflix headers, Inter for premium UI prose -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0B0B;
+            color: #F5F5F5;
+        }
+        .font-netflix {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 0.05em;
+        }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #0B0B0B; }
+        ::-webkit-scrollbar-thumb { background: #262626; border-radius: 3px; }
+    </style>
+</head>
+<body class="antialiased selection:bg-netflixRed selection:text-white">
+
+    <!-- Premium Navigation -->
+    <nav class="sticky top-0 z-50 w-full border-b border-borderGray bg-cinemaBlack/90 backdrop-blur-md px-6 py-4">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl font-netflix text-netflixRed text-tracking-wider">NETFLIX</span>
+                <span class="text-[10px] font-mono tracking-widest text-textMuted uppercase border-l border-borderGray pl-3 hidden sm:inline">Data Intelligence Hub</span>
+            </div>
+            <a href="https://github.com/PrincessJessie-hue/netflix-content-intelligence-dashboard" target="_blank" class="text-xs font-medium border border-borderGray hover:bg-cardGray text-white px-4 py-2 rounded-md transition-all flex items-center gap-2">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> Repository
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Editorial Layout Container -->
+    <main class="max-w-4xl mx-auto px-6 pt-16 pb-32 space-y-24">
+        
+        <!-- ================= HERO SECTION ================= -->
+        <header class="space-y-6">
+            <h1 class="text-6xl md:text-8xl font-netflix tracking-wide text-white leading-none">
+                NETFLIX CONTENT INTELLIGENCE
+            </h1>
+            <p class="text-lg md:text-xl text-textMuted font-light max-w-2xl leading-relaxed">
+                Transforming global streaming catalog metadata into structured, interactive content asset insights using Excel and Power BI.
+            </p>
+            <div class="flex flex-wrap gap-2 pt-2 text-xs font-mono">
+                <span class="px-3 py-1.5 bg-cardGray border border-borderGray text-white rounded">ROLE: DATA ANALYST</span>
+                <span class="px-3 py-1.5 bg-cardGray border border-borderGray text-textMuted rounded">EXCEL</span>
+                <span class="px-3 py-1.5 bg-cardGray border border-borderGray text-textMuted rounded">POWER BI</span>
+            </div>
+        </header>
+
+        <!-- ================= HERO STATISTICS PANEL ================= -->
+        <section class="grid grid-cols-2 md:grid-cols-5 gap-3 border-t border-b border-borderGray py-8">
+            <div class="space-y-1">
+                <span class="text-[10px] font-mono text-textMuted uppercase tracking-wider block">Dataset Size</span>
+                <div class="text-3xl font-netflix text-white">7,787</div>
+                <span class="text-[10px] text-textMuted block">Catalog Titles</span>
+            </div>
+            <div class="space-y-1">
+                <span class="text-[10px] font-mono text-textMuted uppercase tracking-wider block">Countries</span>
+                <div class="text-3xl font-netflix text-white">100+</div>
+                <span class="text-[10px] text-textMuted block">Mapped Regions</span>
+            </div>
+            <div class="space-y-1">
+                <span class="text-[10px] font-mono text-textMuted uppercase tracking-wider block">Movies</span>
+                <div class="text-3xl font-netflix text-white">5,377</div>
+                <span class="text-[10px] text-textMuted block">69% Catalog Share</span>
+            </div>
+            <div class="space-y-1">
+                <span class="text-[10px] font-mono text-textMuted uppercase tracking-wider block">TV Shows</span>
+                <div class="text-3xl font-netflix text-white">2,410</div>
+                <span class="text-[10px] text-textMuted block">31% Catalog Share</span>
+            </div>
+            <div class="space-y-1 col-span-2 md:col-span-1">
+                <span class="text-[10px] font-mono text-textMuted uppercase tracking-wider block">Peak Growth</span>
+                <div class="text-3xl font-netflix text-white">1,121</div>
+                <span class="text-[10px] text-textMuted block">Titles Added (2018)</span>
+            </div>
+        </section>
+
+        <!-- ================= EXECUTIVE SUMMARY ================= -->
+        <section class="space-y-4">
+            <div class="flex items-center gap-2 text-netflixRed font-mono text-xs uppercase tracking-wider">
+                <span>[01] Overview</span>
+            </div>
+            <h2 class="text-2xl font-bold text-white tracking-tight">Executive Summary</h2>
+            <div class="space-y-4 text-textMuted text-sm md:text-base leading-relaxed border-l-2 border-borderGray pl-4">
+                <p>
+                    Netflix's catalogue has grown rapidly over the past decade, with the strongest expansion occurring after 2015 as the company increased investment in original programming and international content.
+                </p>
+                <p>
+                    This analysis found that the United States remains Netflix's largest source of content, while countries such as India, South Korea, Japan and the United Kingdom continue to strengthen the platform's global catalogue.
+                </p>
+                <p>
+                    Movies represent approximately 69% of all titles, indicating that feature-length productions remain Netflix's primary offering. Audience ratings also reveal a strong emphasis on mature content, suggesting that Netflix primarily targets teenage and adult viewers.
+                </p>
+                <p>
+                    To support these findings, an interactive Power BI dashboard was developed, enabling stakeholders to explore trends dynamically through filters for countries, genres, ratings and content types.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= MY ROLE & PROJECT METRICS ================= -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-4">
+                <div class="text-netflixRed font-mono text-xs uppercase tracking-wider">[02] Context</div>
+                <h2 class="text-xl font-bold text-white tracking-tight">My Role & Project Footprint</h2>
+                <p class="text-xs text-textMuted leading-relaxed">
+                    As the sole Data Analyst, I was responsible for data ingestion, cleaning anomalies, establishing relational data schemas, and building user-facing performance interfaces.
+                </p>
+            </div>
+            <div class="md:col-span-2 grid grid-cols-2 sm:grid-cols-3 gap-3">
+                <div class="p-4 bg-cardGray border border-borderGray rounded">
+                    <div class="text-2xl font-netflix text-white">5</div>
+                    <p class="text-[10px] font-mono text-textMuted uppercase tracking-tight">Business Questions</p>
+                </div>
+                <div class="p-4 bg-cardGray border border-borderGray rounded">
+                    <div class="text-2xl font-netflix text-white">6</div>
+                    <p class="text-[10px] font-mono text-textMuted uppercase tracking-tight">Visualizations</p>
+                </div>
+                <div class="p-4 bg-cardGray border border-borderGray rounded">
+                    <div class="text-2xl font-netflix text-white">4</div>
+                    <p class="text-[10px] font-mono text-textMuted uppercase tracking-tight">Recommendations</p>
+                </div>
+                <div class="p-4 bg-cardGray border border-borderGray rounded">
+                    <div class="text-2xl font-netflix text-white">1</div>
+                    <p class="text-[10px] font-mono text-textMuted uppercase tracking-tight">Power BI Dashboard</p>
+                </div>
+                <div class="p-4 bg-cardGray border border-borderGray rounded">
+                    <div class="text-2xl font-netflix text-white">8</div>
+                    <p class="text-[10px] font-mono text-textMuted uppercase tracking-tight">Excel Pivot Tables</p>
+                </div>
+                <div class="p-4 bg-cardGray border border-borderGray rounded">
+                    <div class="text-2xl font-netflix text-white">5</div>
+                    <p class="text-[10px] font-mono text-textMuted uppercase tracking-tight">Insights Generated</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= BUSINESS PROBLEM & QUESTIONS ================= -->
+        <section class="space-y-6">
+            <div class="space-y-2">
+                <div class="text-netflixRed font-mono text-xs uppercase tracking-wider">[03] Discovery Parameters</div>
+                <h2 class="text-2xl font-bold text-white tracking-tight">Business Problem & Target Questions</h2>
+            </div>
+            <div class="bg-cardGray border border-borderGray p-6 rounded space-y-4">
+                <p class="text-sm text-textMuted leading-relaxed">
+                    Without structured metadata analysis, content programming executives lack an aggregated view of library distribution metrics, causing operational gaps when evaluating historical production pipelines against localized multi-regional content goals.
+                </p>
+                <div class="border-t border-borderGray pt-4 space-y-2">
+                    <p class="text-xs font-mono text-white tracking-wider uppercase mb-2">Core Exploratory Mandates:</p>
+                    <ul class="space-y-2 text-xs text-textMuted font-mono">
+                        <li class="flex items-start gap-2">
+                            <span class="text-netflixRed">➔</span> What is the balance of content distributions across movies and episodic formats?
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-netflixRed">➔</span> How do geographical production shares break down across local markets?
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-netflixRed">➔</span> Where are the dominant target distribution spikes located regarding audience rating pools?
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= DATASET & TOOLS USED ================= -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="space-y-3">
+                <h3 class="text-xs font-mono uppercase tracking-widest text-textMuted">Dataset Profiles</h3>
+                <div class="p-4 bg-cardGray border border-borderGray rounded space-y-2">
+                    <div class="text-sm font-bold text-white">Netflix Ingestion Metadata</div>
+                    <p class="text-xs text-textMuted leading-relaxed">
+                        Contains detailed metadata records covering release schedules, casting connections, country metrics, classification indexes, and runtime records.
+                    </p>
+                </div>
+            </div>
+            <div class="space-y-3">
+                <h3 class="text-xs font-mono uppercase tracking-widest text-textMuted">Tools Applied</h3>
+                <div class="p-4 bg-cardGray border border-borderGray rounded space-y-2">
+                    <div class="text-sm font-bold text-white">Production Infrastructure</div>
+                    <p class="text-xs text-textMuted leading-relaxed">
+                        Excel for raw structural transformations, text cleaning expressions, and pivot validations. Power BI for data modeling, multi-slicer relationships, and publishing.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= WHY THIS PROJECT? ================= -->
+        <section class="space-y-4">
+            <div class="text-netflixRed font-mono text-xs uppercase tracking-wider">[04] Rationale</div>
+            <h2 class="text-2xl font-bold text-white tracking-tight">Why This Project?</h2>
+            <div class="text-textMuted text-sm md:text-base leading-relaxed space-y-3">
+                <p>
+                    Streaming services generate enormous amounts of data, making them an excellent example of how analytics can support business decisions.
+                </p>
+                <p>
+                    I chose this dataset because it allowed me to investigate real-world questions around content strategy, international expansion and audience targeting while strengthening my skills in exploratory data analysis, dashboard development and business storytelling.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= METHODOLOGY DIAGRAM ================= -->
+        <section class="space-y-4">
+            <div class="text-netflixRed font-mono text-xs uppercase tracking-wider">[05] Workflow Structure</div>
+            <h2 class="text-2xl font-bold text-white tracking-tight">Methodology Pipeline</h2>
+            <div class="w-full overflow-x-auto pb-4">
+                <div class="flex items-center space-x-2 min-w-[850px] text-[11px] font-mono">
+                    <div class="px-3 py-2 bg-cardGray border border-borderGray text-white rounded">Business Problem</div>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-textMuted"></i>
+                    <div class="px-3 py-2 bg-cardGray border border-borderGray text-white rounded">Data Understanding</div>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-textMuted"></i>
+                    <div class="px-3 py-2 bg-cardGray border border-borderGray text-white rounded">Data Cleaning</div>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-textMuted"></i>
+                    <div class="px-3 py-2 bg-cardGray border border-borderGray text-white rounded">Exploratory Analysis</div>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-textMuted"></i>
+                    <div class="px-3 py-2 bg-cardGray border border-borderGray text-white rounded">Dashboard Design</div>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-textMuted"></i>
+                    <div class="px-3 py-2 bg-cardGray border border-borderGray text-white rounded">Business Insights</div>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-textMuted"></i>
+                    <div class="px-3 py-2 bg-netflixRed text-white font-bold rounded">Recommendations</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= EXPLORATORY DATA ANALYSIS ================= -->
+        <section class="space-y-4">
+            <div class="text-netflixRed font-mono text-xs uppercase tracking-wider">[06] Synthesis Analysis</div>
+            <h2 class="text-2xl font-bold text-white tracking-tight">Exploratory Data Analysis</h2>
+            <p class="text-sm text-textMuted leading-relaxed">
+                Initial evaluation profiles involved breaking down text strings within categorical attributes, normalizing null values in geographic indicators, and formatting date arrays to isolate long-term catalog metrics.
+            </p>
+        </section>
+
+        <!-- ================= LIVE INTERACTIVE DASHBOARD SECTION ================= -->
+        <section class="space-y-6">
+            <div class="space-y-2">
+                <div class="text-netflixRed font-mono text-xs uppercase tracking-wider">[07] System Delivery</div>
+                <h2 class="text-2xl font-bold text-white tracking-tight">Interactive Dashboard Engine</h2>
+                <p class="text-xs text-textMuted leading-relaxed">
+                    The dashboard was designed to enable stakeholders to answer business questions without manually exploring thousands of rows of data. Users can interact with every visualization by selecting countries, genres, ratings and content types. Every interaction automatically updates the remaining charts, allowing deeper exploration of relationships within the dataset.
+                </p>
+            </div>
+
+            <!-- Dashboard Frame View -->
+            <div class="bg-cardGray border border-borderGray rounded-lg overflow-hidden shadow-2xl">
+                <!-- Frame Header -->
+                <div class="bg-black/40 border-b border-borderGray p-4 flex flex-wrap items-center justify-between gap-3">
+                    <div class="flex items-center gap-2">
+                        <div class="flex items-center gap-1">
+                            <span class="h-2 w-2 rounded-full bg-netflixRed"></span>
+                            <span class="h-2 w-2 rounded-full bg-textMuted"></span>
+                            <span class="h-2 w-2 rounded-full bg-textMuted"></span>
+                        </div>
+                        <span id="active-lbl" class="text-xs font-mono text-white tracking-wider uppercase ml-2">GLOBAL OVERVIEW PLATFORM</span>
+                    </div>
+                    
+                    <!-- Filters Switchers -->
+                    <div class="flex items-center gap-1 bg-black p-1 rounded border border-borderGray">
+                        <button onclick="switchRegion('global')" id="btn-global" class="region-btn px-2.5 py-1 text-[11px] font-mono tracking-tight rounded bg-netflixRed text-white transition-all">GLOBAL</button>
+                        <button onclick="switchRegion('us')" id="btn-us" class="region-btn px-2.5 py-1 text-[11px] font-mono tracking-tight rounded text-textMuted hover:text-white transition-all">UNITED STATES</button>
+                        <button onclick="switchRegion('india')" id="btn-india" class="region-btn px-2.5 py-1 text-[11px] font-mono tracking-tight rounded text-textMuted hover:text-white transition-all">INDIA</button>
+                    </div>
+                </div>
+
+                <!-- Simulation Matrix Data View -->
+                <div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Column 1: Vol Profile -->
+                    <div class="space-y-4 md:border-r border-borderGray md:pr-6">
+                        <span class="text-[10px] font-mono text-textMuted uppercase tracking-wider block">Portfolio Density Allocation</span>
+                        <div class="space-y-3">
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1 text-textMuted"><span>Movies Volume</span><span id="txt-movies-pct" class="text-white">69%</span></div>
+                                <div class="w-full bg-black h-1.5 rounded-full overflow-hidden"><div id="bar-movies" class="bg-netflixRed h-1.5 rounded-full transition-all duration-500" style="width: 69%"></div></div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-xs font-mono mb-1 text-textMuted"><span>TV Shows Volume</span><span id="txt-tv-pct" class="text-white">31%</span></div>
+                                <div class="w-full bg-black h-1.5 rounded-full overflow-hidden"><div id="bar-tv" class="bg-zinc-700 h-1.5 rounded-full transition-all duration-500" style="width: 31%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Genre Density -->
+                    <div class="space-y-4 md:border-r border-borderGray md:pr-6">
+                        <span class="text-[10px] font-mono text-textMuted uppercase tracking-wider block">Top Genre Densities</span>
+                        <div class="space-y-2 font-mono text-xs">
+                            <div class="flex justify-between items-center p-2 bg-black border border-borderGray rounded">
+                                <span class="text-textMuted" id="genre-1">International Dramas</span>
+                                <span class="text-[10px] text-netflixRed font-bold uppercase" id="genre-1-val">Primary Target</span>
+                            </div>
+                            <div class="flex justify-between items-center p-2 bg-black border border-borderGray rounded">
+                                <span class="text-textMuted" id="genre-2">Independent Comedies</span>
+                                <span class="text-[10px] text-white font-bold uppercase" id="genre-2-val">High Density</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Audience Spikes -->
+                    <div class="space-y-4 flex flex-col justify-between">
+                        <div>
+                            <span class="text-[10px] font-mono text-textMuted uppercase tracking-wider block mb-2">Dominant Demographic Rating</span>
+                            <div class="p-4 bg-black border border-borderGray rounded text-center space-y-1">
+                                <div id="txt-rating" class="text-4xl font-netflix tracking-wide text-netflixRed">TV-MA</div>
+                                <div id="txt-rating-desc" class="text-[10px] text-textMuted font-mono">Mature Audiences & Adult Target Areas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action CTAs -->
+            <div class="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+                <button class="px-6 py-3 bg-netflixRed hover:bg-red-700 text-white font-mono text-xs font-bold rounded shadow transition-all tracking-wider">
+                    LAUNCH DASHBOARD
+                </button>
+                <a href="https://github.com/PrincessJessie-hue/netflix-content-intelligence-dashboard" target="_blank" class="px-6 py-3 bg-transparent border border-borderGray hover:bg-cardGray text-white font-mono text-xs font-bold rounded shadow transition-all tracking-wider text-center block">
+                    VIEW GITHUB REPOSITORY
+                </a>
+            </div>
+        </section>
+
+        <!-- ================= STRUCTURAL KEY FINDINGS ================= -->
+        <section class="space-y-6">
+            <div class="space-y-2">
+                <div class="text-netflixRed font-mono text-xs uppercase tracking-wider">[08] Detailed Evidence</div>
+                <h2 class="text-2xl font-bold text-white tracking-tight">Project Catalog Findings</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- Finding 1 -->
+                <div class="bg-cardGray border border-borderGray p-6 rounded space-y-4 shadow-sm">
+                    <div class="flex items-center gap-2 border-b border-borderGray pb-2">
+                        <span class="text-xs font-mono font-bold text-netflixRed">FINDING 01</span>
+                        <h4 class="text-sm font-bold text-white">Netflix's rapid expansion accelerated after 2015.</h4>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                        <div class="space-y-1"><span class="font-mono text-textMuted uppercase text-[10px] tracking-wider block">What we observed</span><p class="text-textMuted leading-relaxed">Annual releases increased dramatically, reaching 1,121 titles in 2018.</p></div>
+                        <div class="space-y-1"><span class="font-mono text-textMuted uppercase text-[10px] tracking-wider block">Why it matters</span><p class="text-textMuted leading-relaxed">This reflects Netflix's strategic shift toward original programming and international expansion during one of the company's fastest growth periods.</p></div>
+                        <div class="space-y-1"><span class="font-mono text-textMuted uppercase text-[10px] tracking-wider block">Business Impact</span><p class="text-textMuted leading-relaxed">Executives can use this trend to evaluate how historical investment strategies influenced catalogue growth and support future content planning.</p></div>
+                    </div>
+                </div>
+
+                <!-- Finding 2 -->
+                <div class="bg-cardGray border border-borderGray p-6 rounded space-y-4 shadow-sm">
+                    <div class="flex items-center gap-2 border-b border-borderGray pb-2">
+                        <span class="text-xs font-mono font-bold text-netflixRed">FINDING 02</span>
+                        <h4 class="text-sm font-bold text-white">The United States remains Netflix's largest source of content.</h4>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                        <div class="space-y-1"><span class="font-mono text-textMuted uppercase text-[10px] tracking-wider block">What we observed</span><p class="text-textMuted leading-relaxed">The United States contributes the largest absolute share of production volume, while key regions like India, South Korea, Japan and the United Kingdom continue to strengthen the platform's global catalogue.</p></div>
+                        <div class="space-y-1"><span class="font-mono text-textMuted uppercase text-[10px] tracking-wider block">Why it matters</span><p class="text-textMuted leading-relaxed">While geographic localization continues expanding, a significant volume of portfolio dependency anchors inside mature domestic infrastructure networks.</p></div>
+                        <div class="space-y-1"><span class="font-mono text-textMuted uppercase text-[10px] tracking-wider block">Business Impact</span><p class="text-textMuted leading-relaxed">Optimizes content spend alignment between core domestic audiences and growing international subscriber bases.</p></div>
+                    </div>
+                </div>
+
+                <!-- Finding 3 -->
+                <div class="bg-cardGray border border-borderGray p-6 rounded space-y-4 shadow-sm">
+                    <div class="flex items-center gap-2 border-b border-borderGray pb-2">
+                        <span class="text-xs font-mono font-bold text-netflixRed">FINDING 03</span>
+                        <h4 class="text-sm font-bold text-white">Movies dominate the catalog profile share over TV Shows.</h4>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                        <div class="space-y-1"><span class="font-mono text-textMuted uppercase text-[10px] tracking-wider block">What we observed</span><p class="text-textMuted leading-relaxed">Movies represent approximately 69% of all titles, indicating that feature-length productions remain Netflix's primary offering.</p></div>
+                        <div class="space-y-1"><span class="font-mono text-textMuted uppercase text-[10px] tracking-wider block">Why it matters</span><p class="text-textMuted leading-relaxed">Feature-length titles are highly efficient for new viewer acquisitions, while episodic structural designs build long-term retention metrics.</p></div>
+                        <div class="space-y-1"><span class="font-mono text-textMuted uppercase text-[10px] tracking-wider block">Business Impact</span><p class="text-textMuted leading-relaxed">Directs appropriate asset mix strategies when reviewing content investments and licensing distribution contracts.</p></div>
+                    </div>
+                </div>
+
+                <!-- Finding 4 -->
+                <div class="bg-cardGray border border-borderGray p-6 rounded space-y-4 shadow-sm">
+                    <div class="flex items-center gap-2 border-b border-borderGray pb-2">
+                        <span class="text-xs font-mono font-bold text-netflixRed">FINDING 04</span>
+                        <h4 class="text-sm font-bold text-white">Target classifications lean heavily toward mature audiences.</h4>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                        <div class="space-y-1"><span class="font-mono text-textMuted uppercase text-[10px] tracking-wider block">What we observed</span><p class="text-textMuted leading-relaxed">Audience ratings reveal a strong emphasis on mature content, suggesting that Netflix primarily targets teenage and adult viewers.</p></div>
+                        <div class="space-y-1"><span class="font-mono text-textMuted uppercase text-[10px] tracking-wider block">Why it matters</span><p class="text-textMuted leading-relaxed">Content investments mirror the primary paying demographic brackets of single households and older audience streams.</p></div>
+                        <div class="space-y-1"><span class="font-mono text-textMuted uppercase text-[10px] tracking-wider block">Business Impact</span><p class="text-textMuted leading-relaxed">Enables marketing analytics divisions to tailor promotional content toward high-yielding adult viewer accounts.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= RECOMMENDATIONS ================= -->
+        <section class="space-y-4">
+            <div class="text-netflixRed font-mono text-xs uppercase tracking-wider">[09] Business Strategy</div>
+            <h2 class="text-2xl font-bold text-white tracking-tight">Strategic Recommendations</h2>
+            <div class="bg-cardGray border border-borderGray p-6 rounded space-y-4 text-sm text-textMuted leading-relaxed">
+                <p>
+                    <strong class="text-white font-medium">1. Expand International Hub Production:</strong> Balance structural catalog dependencies by funding independent localized content networks in expanding high-growth territories.
+                </p>
+                <p>
+                    <strong class="text-white font-medium">2. Maximize Content Mix Efficiencies:</strong> Optimize film acquisition budgets to anchor upfront user retention while designing targeted serialized episodic streams to improve subscriber lifetime value.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= SKILLS ANALYSIS INVENTORY ================= -->
+        <section class="space-y-4">
+            <h3 class="text-xs font-mono uppercase tracking-widest text-textMuted">Skills Architecture Verification</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 bg-cardGray border border-borderGray p-6 rounded shadow-sm">
+                <div class="space-y-3">
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs font-mono text-textMuted"><span>Excel Data Transformations</span><span>90%</span></div>
+                        <div class="font-mono text-xs text-netflixRed tracking-tighter">█████████░</div>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs font-mono text-textMuted"><span>Power BI Modeling & DAX</span><span>85%</span></div>
+                        <div class="font-mono text-xs text-netflixRed tracking-tighter">████████░░</div>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs font-mono text-textMuted"><span>Data Cleaning Frameworks</span><span>95%</span></div>
+                        <div class="font-mono text-xs text-netflixRed tracking-tighter">██████████</div>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-xs font-mono text-textMuted"><span>Business Insight Delivery</span><span>85%</span></div>
+                        <div class="font-mono text-xs text-netflixRed tracking-tighter">████████░░</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= WHAT I WOULD DO NEXT ================= -->
+        <section class="space-y-4">
+            <div class="text-netflixRed font-mono text-xs uppercase tracking-wider">[10] Technical Horizons</div>
+            <h2 class="text-2xl font-bold text-white tracking-tight">If This Were a Real Business Project</h2>
+            <div class="bg-cardGray border border-borderGray p-6 rounded space-y-4">
+                <p class="text-textMuted text-sm leading-relaxed">
+                    Given access to additional business data, I would extend this analysis by incorporating:
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs font-mono text-textMuted">
+                    <div class="flex items-center gap-2 p-2 bg-black border border-borderGray rounded"><span class="text-netflixRed">✓</span> Netflix subscriber growth by region</div>
+                    <div class="flex items-center gap-2 p-2 bg-black border border-borderGray rounded"><span class="text-netflixRed">✓</span> Watch time by title</div>
+                    <div class="flex items-center gap-2 p-2 bg-black border border-borderGray rounded"><span class="text-netflixRed">✓</span> Viewer retention rates</div>
+                    <div class="flex items-center gap-2 p-2 bg-black border border-borderGray rounded"><span class="text-netflixRed">✓</span> IMDb and Rotten Tomatoes ratings</div>
+                    <div class="flex items-center gap-2 p-2 bg-black border border-borderGray rounded"><span class="text-netflixRed">✓</span> Production budgets</div>
+                    <div class="flex items-center gap-2 p-2 bg-black border border-borderGray rounded"><span class="text-netflixRed">✓</span> Revenue generated by original content</div>
+                </div>
+                <p class="text-xs text-textMuted leading-relaxed pt-2">
+                    This would allow the dashboard to move beyond catalogue analysis and provide insights into content performance, return on investment and subscriber engagement.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= TECHNICAL LIMITATIONS ================= -->
+        <section class="border-l-2 border-amber-600 bg-cardGray border-t border-r border-b border-borderGray p-6 rounded flex items-start gap-4">
+            <i data-lucide="alert-triangle" class="w-5 h-5 text-amber-500 shrink-0 mt-0.5"></i>
+            <div class="space-y-1">
+                <span class="text-[10px] font-mono font-bold text-white tracking-wide uppercase block">Data Boundaries / Limitations</span>
+                <p class="text-textMuted text-xs leading-relaxed">
+                    This exploratory overview operates entirely upon catalog level dimensions and contains zero operational parameters regarding internal streaming metrics, financial production ledgers, or customer account performance.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================= CONCLUSION ================= -->
+        <section class="text-center space-y-3 pt-6 border-t border-borderGray">
+            <h4 class="text-lg font-bold text-white tracking-tight">Case Study Conclusion</h4>
+            <p class="text-textMuted text-sm max-w-2xl mx-auto leading-relaxed font-light">
+                This project demonstrates how raw catalog data can be transformed into actionable business perspectives through clean pipelines, dimensional data modeling, and user-centric analytical layouts.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-borderGray bg-black py-12 text-center text-xs font-mono text-textMuted">
+        <p>&copy; 2026 Internal Strategy Case Study Reviews. Built with hand-coded interface script frameworks.</p>
+    </footer>
+
+    <!-- Interactive Data Switcher JavaScript Engine -->
+    <script>
+        const records = {
+            global: {
+                label: "GLOBAL OVERVIEW PLATFORM",
+                moviesPct: "69%", moviesW: "69%",
+                tvPct: "31%", tvW: "31%",
+                g1: "International Dramas", g1Val: "Primary Target",
+                g2: "Independent Comedies", g2Val: "High Density",
+                rating: "TV-MA", ratingDesc: "Mature Audiences & Adult Target Areas"
+            },
+            us: {
+                label: "DOMESTIC UNITED STATES HUB",
+                moviesPct: "74%", moviesW: "74%",
+                tvPct: "26%", tvW: "26%",
+                g1: "Hollywood Features", g1Val: "Core Volume",
+                g2: "Docuseries Tiers", g2Val: "High Density",
+                rating: "TV-14", ratingDesc: "Parental Guidance & Teenage Demographics"
+            },
+            india: {
+                label: "APAC REGIONAL INGESTION PLATFORM",
+                moviesPct: "88%", moviesW: "88%",
+                tvPct: "12%", tvW: "12%",
+                g1: "Bollywood Cinemas", g1Val: "Absolute Dominance",
+                g2: "Action & Adventure", g2Val: "High Engagement",
+                rating: "TV-14", ratingDesc: "Broad Family & General Audience Target Areas"
+            }
+        };
+
+        function switchRegion(regionKey) {
+            const current = records[regionKey];
+            
+            document.getElementById('active-lbl').innerText = current.label;
+            document.getElementById('txt-movies-pct').innerText = current.moviesPct;
+            document.getElementById('txt-tv-pct').innerText = current.tvPct;
+            document.getElementById('genre-1').innerText = current.g1;
+            document.getElementById('genre-1-val').innerText = current.g1Val;
+            document.getElementById('genre-2').innerText = current.g2;
+            document.getElementById('genre-2-val').innerText = current.g2Val;
+            document.getElementById('txt-rating').innerText = current.rating;
+            document.getElementById('txt-rating-desc').innerText = current.ratingDesc;
+
+            document.getElementById('bar-movies').style.width = current.moviesW;
+            document.getElementById('bar-tv').style.width = current.tvW;
+
+            document.querySelectorAll('.region-btn').forEach(btn => {
+                btn.classList.remove('bg-netflixRed', 'text-white');
+                btn.classList.add('text-textMuted');
+            });
+
+            const targetBtn = document.getElementById(`btn-${regionKey}`);
+            targetBtn.classList.remove('text-textMuted');
+            targetBtn.classList.add('bg-netflixRed', 'text-white');
+        }
+
+        lucide.createIcons();
+    </script>
+</body>
+</html>
